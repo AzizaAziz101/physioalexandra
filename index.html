@@ -199,6 +199,24 @@
     </div>
   </section>
 
+  <!-- Terminbuchung Section -->
+<section id="termin" class="bg-[#46B56C] text-white py-12 text-center">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-heading font-semibold mb-6">Jetzt Termin buchen</h2>
+    <p class="text-white/90 font-body mb-8 max-w-2xl mx-auto">
+      Vereinbaren Sie Ihren Termin bequem online über Doctolib.
+      Schnell, einfach und jederzeit verfügbar.
+    </p>
+    <a href="https://www.doctolib.de/physiotherapeutin/berlin/alexandra-szeszkat"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="inline-block bg-white text-brand-dark font-heading font-semibold px-8 py-3 rounded-full shadow hover:bg-gray-100 transition">
+      Termin auf Doctolib buchen
+    </a>
+  </div>
+</section>
+
+
   <!-- Footer (original war bereits grün; ich habe nur sichergestellt, dass Kontrast stimmt) -->
   <footer class="bg-[#46B56C] text-white py-12">
     <div class="container mx-auto grid md:grid-cols-3 gap-12 px-4">
@@ -263,6 +281,24 @@
       }
     });
   </script>
+
+  <script>
+  // PIN festlegen
+  const PIN = "12391"; // <-- hier die gewünschte PIN ändern
+
+  function askForPin() {
+    const userPin = prompt("Bitte geben Sie die PIN ein, um auf die Seite zuzugreifen:");
+    if(userPin !== PIN) {
+      alert("Falsche PIN. Zugriff verweigert.");
+      // Seite blockieren
+      document.body.innerHTML = "<h1 style='text-align:center;margin-top:20%;'>Zugriff verweigert</h1>";
+    }
+  }
+
+  // Seite prüfen beim Laden
+  window.onload = askForPin;
+</script>
+
 
 </body>
 </html>
