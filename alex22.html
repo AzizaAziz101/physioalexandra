@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PhysioCollective Layout</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: "#00263A",
+              blue: "#0071BC",
+              light: "#F8F8F8"
+            }
+          },
+          fontFamily: {
+            heading: ['Montserrat', 'sans-serif'],
+            body: ['Open Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .swiper {
+      width: 100%;
+      padding-bottom: 40px;
+    }
+    .swiper-slide {
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+  </style>
+  <!-- SwiperJS CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+</head>
+<body class="font-body text-gray-800 bg-white">
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur shadow-sm">
+    <div class="container mx-auto flex items-center justify-between py-3 px-4">
+      <div class="text-xl font-heading font-bold text-brand-dark">Physio Alexandra</div>
+      <nav class="hidden md:flex space-x-8 font-heading text-sm">
+        <a href="#services" class="hover:text-brand-blue transition">Services</a>
+        <a href="#about" class="hover:text-brand-blue transition">Über mich</a>
+        
+        <a href="#contact" class="hover:text-brand-blue transition">Kontakt</a>
+        <a href="#book" class="bg-brand-blue text-white px-4 py-2 hover:bg-brand-dark transition">Book Now</a>
+      </nav>
+      <button id="mobile-menu-button" class="md:hidden text-brand-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+      <a href="#services" class="block px-6 py-3 hover:bg-brand-light">Services</a>
+      <a href="#about" class="block px-6 py-3 hover:bg-brand-light">Über mich</a>
+      
+      <a href="#contact" class="block px-6 py-3 hover:bg-brand-light">Kontakt</a>
+      <a href="#book" class="block px-6 py-3 font-semibold text-brand-blue">Termin?</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative h-[75vh] flex items-center justify-center bg-brand-light">
+    <img src="Fuß.jpg" alt="Hero Bild" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-brand-dark/60"></div>
+    <div class="relative z-10 text-center text-white px-6">
+      <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6">Alexandra Szeszkat</h1>
+      <p class="text-lg md:text-2xl font-body max-w-2xl mx-auto">Von Schmerz zur Bewegung - Ihre Musklen und Gelenke verdienen eine Expertin</p>
+    </div>
+  </section>
+
+
+    <!-- Standorte -->
+  <section id="locations" class="bg-gray-300 container mx-auto py-20 px-4">
+    <h2 class="text-3xl font-heading font-semibold text-center mb-12 text-brand-dark">Privatpraxis für Physiotheraphie in Berlin</h2>
+    <div class="grid md:grid-cols-2 gap-12">
+      <div class="p-8">
+        <h3 class="text-2xl font-heading font-semibold mb-4">Sie haben genug von Schmerzen die ihren Alltag begleiten?</h3>
+        <p class="text-gray-600 font-body">Ihre Schmerzfreie Zukunft beginnt hier - mit evidenzbasierter Physiotherapie in Berlin-Mitte</p>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Über mich -->
+  <section id="about" class="bg-[#46B56C] py-20">
+    <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center px-4">
+      <img src="119.jpg" alt="Über mich" class="w-full h-96 object-cover shadow" />
+      <div>
+        <h2 class="text-3xl font-heading font-bold mb-6 text-brand-dark">Über mich</h2>
+        <p class="text-gray-500 font-body leading-relaxed">Kurzer Text über dich... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+</p>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- Services mit moderner Slideshow -->
+  <section id="services" class="bg-gray-300 container mx-auto py-20 px-4">
+    <h2 class="text-3xl font-heading font-semibold text-center mb-12 text-brand-dark">Leistungen</h2>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide p-6">
+          <img src="116.jpg" alt="Service 1" class="w-full h-48 object-cover mb-4" />
+          <h3 class="text-xl font-heading font-bold mb-2">Service 1</h3>
+          <p class="text-gray-600 font-body">Beschreibung Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="swiper-slide p-6">
+          <img src="117.jpg" alt="Service 2" class="w-full h-48 object-cover mb-4" />
+          <h3 class="text-xl font-heading font-semibold mb-2">Service 2</h3>
+          <p class="text-gray-600 font-body">Beschreibung Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="swiper-slide p-6">
+          <img src="119.jpg" alt="Service 3" class="w-full h-48 object-cover mb-4" />
+          <h3 class="text-xl font-heading font-semibold mb-2">Service 3</h3>
+          <p class="text-gray-600 font-body">Beschreibung Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</p>
+        </div>
+      </div>
+      <!-- Swiper Controls -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </section>
+
+
+<!-- Bild rechts mit bogenförmigem Schnitt -->
+<section id="" class="bg-[#46B56C] container mx-auto py-20 px-4 flex justify-center">
+  <div class="md:w-1/2 flex justify-center">
+    <img src="Skelet.jpg" alt="Physiotherapie Berlin"
+         class="w-2/3 md:w-1/2 lg:w-1/3 mx-auto rounded-t-full" />
+  </div>
+</section>
+
+
+<!-- Kontakt -->
+<section id="contact" class="bg-gray-300 container mx-auto py-20 px-4">
+  <h2 class="text-3xl font-heading font-semibold text-center mb-12 text-brand-dark">Standort & Kontakt</h2>
+  <div class="grid md:grid-cols-2 gap-12 items-center">
+    <div class="space-y-4 font-body text-lg text-gray-700">
+      <p><span class="font-semibold">Adresse:</span><br>
+        Auguststraße 91<br>
+        10117 Berlin
+      </p>
+      <p><span class="font-semibold">Erreichbarkeit:</span><br>
+        U-Bahn Station: Oranienburger Tor<br>
+        S-Bahn Station: Oranienburger Straße<br><br>
+        Jeweils 3 Minuten Fußweg
+      </p>
+      <p><span class="font-semibold">Email:</span><br>
+        <a href="mailto:info@physiocollective.de" class="text-green-600 hover:underline">
+          alexanra.physio.berlin@gmail.com
+        </a>
+      </p>
+      <p><span class="font-semibold">Praxiszeiten:</span><br>
+        Mo-Fr 09.00-16.00<br>
+        
+      </p>
+    </div>
+    <div>
+      
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Footer -->
+<footer class="bg-[#46B56C] text-white py-12">
+  <div class="container mx-auto grid md:grid-cols-3 gap-12 px-4">
+    <div>
+      <h3 class="font-heading font-semibold text-lg mb-4">Physio Collective</h3>
+      <p class="text-gray-400 font-body">
+        Kurzer Text über Mission/Slogan Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-heading font-semibold text-lg mb-4">Navigation</h3>
+      <ul class="space-y-2 font-body">
+        <li><a href="#services" class="hover:underline">Services</a></li>
+        <li><a href="#about" class="hover:underline">Über mich</a></li>
+        <li><a href="#locations" class="hover:underline">Standorte</a></li>
+        <li><a href="#contact" class="hover:underline">Kontakt</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-heading font-semibold text-lg mb-4">Kontakt</h3>
+      <p class="text-gray-400 font-body">Adresse, Telefon, Email</p>
+    </div>
+  </div>
+
+  <!-- Copyright + Legal Links -->
+  <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm font-body">
+    <p>© 2025 Physio Collective. Alle Rechte vorbehalten.</p>
+    <div class="mt-2 space-x-4">
+      <a href="Impressum.html" class="hover:underline">Impressum</a>
+      <a href="Datenschutz.html" class="hover:underline">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const btn = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+
+    new Swiper('.swiper', {
+      slidesPerView: 1,
+      spaceBetween: 24,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+      }
+    });
+  </script>
+
+</body>
+</html>

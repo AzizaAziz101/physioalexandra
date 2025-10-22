@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clean Up Berlin – Professional Cleaning</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    @keyframes fade-in-slow {
+      0% { opacity: 0; transform: scale(0.7777); }
+      100% { opacity: 1; transform: scale(1.2); }
+    }
+    .animate-fade-in-slow { animation: fade-in-slow 0.9s ease-out both; }
+
+    /* neue Variante etwas schneller */
+    @keyframes fade-in-fast {
+      0% { opacity: 0; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    .animate-fade-in-fast { animation: fade-in-fast 0.6s ease-out both; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #4B3F3A;
+    }
+
+    /* Slide-in Animation */
+    @keyframes slideIn {
+      from { transform: translateX(-100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slideOut {
+      from { transform: translateX(0); opacity: 1; }
+      to { transform: translateX(-100%); opacity: 0; }
+    }
+    .slide-in { animation: slideIn 0.3s ease forwards; }
+    .slide-out { animation: slideOut 0.3s ease forwards; }
+
+    /* Hamburger Animation */
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #4B3F3A;
+      border-radius: 1px;
+      transition: all 0.3s ease;
+    }
+    .hamburger.open span:nth-child(1) {
+      transform: rotate(45deg) translate(4px, 4px);
+    }
+    .hamburger.open span:nth-child(2) {
+      transform: rotate(-45deg) translate(4px, -4px);
+    }
+  </style>
+</head>
+<body class="font-['Segoe_UI'] relative min-h-screen">
+
+
+
+
+
+
+
+
+
+  <!-- HEADER -->
+<header class="header bg-white shadow-sm">
+  <div class="header-content">
+    <div class="flex justify-between items-center px-4 py-5 relative border-b border-gray-200">
+
+      <!-- Logo -->
+      <a href="index.html" class="font-semibold text-xl hover:opacity-80">
+        Alexandra Physio
+      </a>
+
+      <!-- Call us: nur mobil -->
+      <a href="tel:+4930123456" 
+         class="md:hidden flex items-center gap-1 font-medium text-base px-3 py-2 absolute right-16 top-1/2 -translate-y-1/2">
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-8 font-medium text-lg">
+        <a href="#services" class="hover:opacity-80 transition">Leistungen</a>
+        <a href="#about" class="hover:opacity-80 transition">Über mich</a>
+        <a href="#contact" class="hover:opacity-80 transition">Kontakt</a>
+      </nav>
+
+      <!-- Mobile Hamburger -->
+      <button id="menu-btn" 
+              class="hamburger md:hidden flex flex-col gap-2 ml-4 focus:outline-none relative z-10 w-10 h-10 justify-center items-center">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Menü Overlay -->
+<div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+  <div id="menu-panel" class="bg-white w-72 h-full p-8 shadow-lg">
+    <nav class="flex flex-col gap-6 font-semibold text-xl mt-12">
+      <a href="#services" class="py-3">Leistungen</a>
+      <a href="#about" class="py-3">Über mich</a>
+      <a href="#contact" class="py-3">Kontakt</a>
+    </nav>
+  </div>
+</div>
+
+
+
+<!-- CONTENT -->
+<div class="mt-28 md:mt-32 max-w-6xl mx-auto px-4 md:flex md:items-center md:gap-12">
+  <!-- Text links -->
+  <div class="text-center md:text-left md:w-1/2 reveal">
+    <h1 class="text-2xl md:text-4xl font-bold mb-6">
+      Alexandra Szeszkat – Evidenzbasierte Physiotherapie in Berlin Mitte
+    </h1>
+  </div>
+
+  <!-- Bild rechts mit bogenförmigem Schnitt -->
+  <div class="md:w-1/2 max-md:mt-16">
+    <img src="116.jpg" alt="Physiotherapie Berlin"
+         class="w-3/4 md:w-full mx-auto rounded-t-full animate-fade-in-slow object-cover"/>
+  </div>
+</div>
+
+
+
+<div class="bg-white mx-auto px-6 md:px-16 py-6 text-center mt-32">
+  <p class="mb-8 leading-relaxed font-semibold">
+    In meiner Praxis in Berlin Mitte widme ich mich mit Leidenschaft und Fachwissen jeder Behandlung. Ich unterstütze Sie zuverlässig und individuell bei der Genesung und Prävention.
+  </p>
+  <p class="mb-16 leading-relaxed font-semibold">
+    Mit modernen, evidenzbasierten Methoden sorge ich dafür, dass Ihre Gesundheit nachhaltig gefördert wird und Sie sich wieder frei bewegen können.
+  </p>
+
+  <!-- trenne hier -->
+
+  <div class="reveal delay-100 relative bg-[#00b956] text-white rounded-3xl p-8 max-w-3xl mx-auto shadow-lg">
+    <!-- kleine "Sprechblasen-Spitze" -->
+    <div class="absolute -bottom-4 left-10 w-8 h-8 bg-[#00b956] rounded-tr-3xl rotate-45"></div>
+
+    <h2 class="text-2xl font-semibold mb-6">Warum mich wählen?</h2>
+    <p class="mb-10 leading-relaxed font-medium">
+      Ich weiß, dass gezielte physiotherapeutische Behandlung Ihr Wohlbefinden und Ihre Beweglichkeit deutlich verbessern kann. Ob akute Beschwerden oder langfristige Prävention – jede Therapie passe ich individuell an Sie an.
+    </p>
+    <p class="leading-relaxed font-medium">
+      Mein Ziel ist es, Ihre Gesundheit zu stärken, damit Sie sich wieder frei und schmerzfrei bewegen können. Sie stehen im Mittelpunkt jeder Behandlung.
+    </p>
+  </div>
+</div>
+
+<section class="text-black py-7">
+<div class="mt-6 mx-auto px-6 md:px-16 py-6 text-center text-[#4B3F3A]">
+  <h2 class="reveal delay-100 text-2xl font-semibold mb-6">Physiotherapie Berlin Mitte – Für Ihre Gesundheit</h2>
+  <p class="mb-10 leading-relaxed font-semibold">
+    Meine Mission ist es, Ihre Mobilität, Kraft und Lebensqualität zu verbessern – individuell, professionell und nachhaltig.
+  </p>
+</div>
+
+<div class="py-5 mb-0 min-h-[425px] relative max-w-xs w-full mx-auto">
+  <img src="117.jpg" alt="Physiotherapie Behandlung in Berlin Mitte"
+       class="rounded-2xl w-full h-[300px] object-cover block mb-4 md:absolute md:top-20 md:left-32 opacity-0" data-animate="fast" style="animation-delay:0.2s"/>
+  <img src="119.jpg" alt="Patientenbetreuung Physiotherapie Berlin Mitte"
+       class="rounded-2xl w-full h-[300px] object-cover z-10 block md:relative md:-left-32 opacity-0" data-animate="fast" style="animation-delay:0.6s"/>
+</div>
+
+</section>
+
+<section style="background:#7d7d7d;" class="text-black py-7 border-b border-gray-200">
+  <div class="w-full max-w-3xl mx-auto px-4">
+    <p class="font-semibold text-center">
+      Für Ihre Gesundheit und Ihr Wohlbefinden – Tag für Tag.
+    </p>
+  </div>
+</section>
+
+
+
+
+<footer class="bg-[#00b956] text-white py-10 mt-auto">
+  <div class="max-w-6xl mx-auto px-6 grid gap-10 md:grid-cols-3 text-center md:text-left">
+    
+    <div>
+      <h3 class="font-bold text-xl mb-3">Clean Up Berlin</h3>
+      <p class="text-sm leading-relaxed">
+        Professional Cleaning Services for Your Home & Office – reliable, eco-friendly, and thorough.
+      </p>
+      <p class="text-xs mt-4 opacity-80">© 2025 Clean Up Berlin. All rights reserved.</p>
+    </div>
+    
+    <div>
+      <h4 class="font-semibold text-lg mb-3">Contact Us</h4>
+      <p class="text-sm">
+        Phone: 
+        <a href="tel:+4930123456" class="underline hover:text-green-200">+49 30 123456</a>
+      </p>
+      <p class="text-sm mt-1">
+        Email: 
+        <a href="mailto:info@cleanupberlin.de" class="underline hover:text-green-200">info@cleanupberlin.de</a>
+      </p>
+    </div>
+    
+    <div>
+      <h4 class="font-semibold text-lg mb-3">Legal</h4>
+      <ul class="space-y-2">
+        <li><a href="Impressum.html" class="underline hover:text-green-200 text-sm">Impressum</a></li>
+        <li><a href="Datenschutz.html" class="underline hover:text-green-200 text-sm">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+  </div>
+</footer>
+
+
+<a href="#"
+   id="backToTop"
+   class="back-to-top fixed right-6 bottom-6 z-50 w-14 h-14 flex items-center justify-center
+          bg-[#00b956] text-black rounded-lg
+          transition-colors duration-300 ease-in-out hover:bg-[#00994a] opacity-0 pointer-events-none">
+
+  <svg xmlns="http://www.w3.org/2000/svg"
+       class="h-7 w-7"
+       viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15" />
+  </svg>
+</a>
+
+<!-- JAVASCRIPT -->
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuPanel = document.getElementById('menu-panel');
+
+  menuBtn.addEventListener('click', () => {
+    const isOpen = menuBtn.classList.toggle('open');
+    if (isOpen) {
+      mobileMenu.classList.remove('hidden');
+      menuPanel.classList.remove('slide-out');
+      menuPanel.classList.add('slide-in');
+    } else {
+      menuPanel.classList.remove('slide-in');
+      menuPanel.classList.add('slide-out');
+      mobileMenu.classList.add('hidden');
+    }
+  });
+
+  mobileMenu.addEventListener('click', (e) => {
+    if (e.target === mobileMenu) {
+      menuBtn.classList.remove('open');
+      menuPanel.classList.remove('slide-in');
+      menuPanel.classList.add('slide-out');
+      mobileMenu.classList.add('hidden');
+    }
+  });
+
+  /* Reveal Animation */
+  const reveals = document.querySelectorAll(".reveal");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("opacity-0", "translate-y-10");
+        entry.target.classList.add("opacity-100", "translate-y-0");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  reveals.forEach(el => {
+    el.classList.add("opacity-0","translate-y-10","transition-all","duration-700","ease-out");
+    observer.observe(el);
+  });
+
+  /* Fade-in-fast für Bilder unten (ab 25% Sichtbarkeit) */
+  const fastImages = document.querySelectorAll("[data-animate='fast']");
+  const imgObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate-fade-in-fast");
+        entry.target.classList.remove("opacity-0");
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.25 });
+
+  fastImages.forEach(img => imgObserver.observe(img));
+
+  /* Back-to-top smooth scroll */
+  function easeInOutExpo(t) {
+    if (t === 0) return 0;
+    if (t === 1) return 1;
+    if (t < 0.5) {
+      return Math.pow(2, 20 * t - 10) / 2;
+    } else {
+      return (2 - Math.pow(2, -20 * t + 10)) / 2 - 0.00005 * (1 - t);
+    }
+  }
+
+  function scrollToTop(duration = 1500) {
+    const start = window.scrollY || document.documentElement.scrollTop;
+    const startTime = performance.now();
+
+    function animate(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeInOutExpo(progress);
+      const scrollY = start * (1 - easedProgress);
+      window.scrollTo(0, scrollY);
+      if (progress < 1) requestAnimationFrame(animate);
+    }
+    requestAnimationFrame(animate);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const backToTop = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 600) {
+        backToTop.classList.remove("opacity-0", "pointer-events-none");
+        backToTop.classList.add("opacity-100");
+      } else {
+        backToTop.classList.remove("opacity-100");
+        backToTop.classList.add("opacity-0", "pointer-events-none");
+      }
+    });
+    backToTop.addEventListener("click", (e) => {
+      e.preventDefault();
+      scrollToTop(1500);
+    });
+  });
+</script>
+</body>
+</html>
